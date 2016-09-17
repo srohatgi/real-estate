@@ -1,0 +1,18 @@
+{
+  "name": "real-estate",
+  "version": "0.0.1",
+  "description": "signing, storing documents on blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "truffle": "truffle"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-testrpc": "^2.2.7"
+  },
+  "devDependencies": {
+    "truffle": "^2.0.8"
+  }
+}
