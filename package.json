@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "truffle": "truffle"
+    "truffle": "truffle",
+    "testrpc": "testrpc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethereumjs-testrpc": "^2.2.7"
   },
   "devDependencies": {
-    "truffle": "^2.0.8"
+    "truffle": "^2.0.8",
+    "ethereumjs-testrpc": "^2.2.7"
   }
 }
