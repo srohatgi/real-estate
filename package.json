@@ -10,10 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "truffle": "^2.0.8",
-    "ethereumjs-testrpc": "^2.2.7"
+    "ethereumjs-testrpc": "^2.2.7",
+    "truffle": "^2.0.8"
   }
 }
