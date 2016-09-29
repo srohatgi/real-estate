@@ -4,20 +4,18 @@
   <title>Real Estate Escrow App</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href="./app.css" rel='stylesheet' type='text/css'>
-  <script src="./app.js" type='text/javacript'></script>
+  <script src="./app.js"></script>
 </head>
 <body>
-  <h1>Escrow Closing</h1>
+  <h1>Real Estate</h1>
   <br>
-  <h2>Notary Service</h2>
-  <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
-
+  <h3>Notary Service</h3>
   <br>
-  <h1>Notarize</h1>
-  <br><label for="document">Document:</label><input type="textarea" id="document" placeholder="e.g., Such a perfect house"></input>
-  <br><br><button id="notarize" onclick="notarizeDocument()">Notarize!</button>
+  <label for="escrow-document">Document:</label>
+  <textarea id="escrow-document" placeholder="e.g., Such a perfect house"></textarea>
+  <button id="notarize" onclick="notarizeDocument()">Notarize!</button>
   <br><br>
   <br>
-  <span id="status"></span>
+  <span id="escrow-document-status"></span>
 </body>
 </html>

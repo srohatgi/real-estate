@@ -1,38 +1,22 @@
 var accounts;
 var account;
 
+function notarizeDocument() {
+  var nsvc = NotarizeDocument.deployed();
+  var doc = document.getElementById("escrow-document");
+  if (nsvc.isNotarized(doc.value)) {
+    setStatus("<b> true </b>");
+  } else {
+    nsvc.notarize(doc.value).then(function(value) {
+      setStatus("<i> notarizing... </i>");
+      setTimeout(function() { setStatus("<b> notarized </b>"); }, 5000);
+    });
+  }
+};
+
 function setStatus(message) {
-  var status = document.getElementById("status");
+  var status = document.getElementById("escrow-document-status");
   status.innerHTML = message;
-};
-
-function refreshBalance() {
-  var meta = MetaCoin.deployed();
-
-  meta.getBalance.call(account, {from: account}).then(function(value) {
-    var balance_element = document.getElementById("balance");
-    balance_element.innerHTML = value.valueOf();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error getting balance; see log.");
-  });
-};
-
-function sendCoin() {
-  var meta = MetaCoin.deployed();
-
-  var amount = parseInt(document.getElementById("amount").value);
-  var receiver = document.getElementById("receiver").value;
-
-  setStatus("Initiating transaction... (please wait)");
-
-  meta.sendCoin(receiver, amount, {from: account}).then(function() {
-    setStatus("Transaction complete!");
-    refreshBalance();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error sending coin; see log.");
-  });
 };
 
 window.onload = function() {
@@ -50,6 +34,6 @@ window.onload = function() {
     accounts = accs;
     account = accounts[0];
 
-    refreshBalance();
+    setStatus("<i>connected </i>with account: " + account);
   });
 }
